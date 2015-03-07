@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cod4MapRotationBuilder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StockMaps" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mp_convoy;mp_backlot;mp_bloc;mp_countdown;mp_crash;mp_crossfire;mp_citystreets;mp_farm;mp_overgrown;mp_pipeline;mp_shipment;mp_strike;mp_showdown;mp_vacant;mp_cargoship;mp_crash_snow;mp_broadcast;mp_carentan;mp_creek;mp_killhouse</Value>
+    </Setting>
+    <Setting Name="GameModes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">war:Team Deathmatch;sd:Search &amp; Destroy;sab:Sabotage;koth:Headquarters;dom:Domination;dm:Free for All;ftag:Freeze Tag</Value>
+    </Setting>
+    <Setting Name="Path" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
