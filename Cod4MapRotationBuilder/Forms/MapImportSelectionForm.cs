@@ -49,7 +49,6 @@ namespace Cod4MapRotationBuilder.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("button2_Click!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             Close();
         }
 
@@ -67,9 +66,9 @@ namespace Cod4MapRotationBuilder.Forms
         /// <param name="e">A <see cref="T:System.ComponentModel.CancelEventArgs"/> that contains the event data. </param>
         protected override void OnClosing(CancelEventArgs e)
         {
-            Debug.WriteLine("OnClosing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             if (isDownloading)
             {
+                isCanceled = true;
                 e.Cancel = true;
             }
             else
