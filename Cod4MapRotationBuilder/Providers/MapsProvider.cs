@@ -16,6 +16,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Windows.Forms;
 using Cod4MapRotationBuilder.Collections;
 using Cod4MapRotationBuilder.Data;
@@ -48,7 +49,7 @@ namespace Cod4MapRotationBuilder.Providers
             get { return _collection; }
         }
 
-        private string CallOfDuty4Path
+        private static string CallOfDuty4Path
         {
             get { return Settings.Default.Path; }
             set
@@ -56,6 +57,16 @@ namespace Cod4MapRotationBuilder.Providers
                 Settings.Default.Path = value;
                 Settings.Default.Save();
             }
+        }
+
+        public static string CallOfDuty4UserMapsPath
+        {
+            get { return Path.Combine(CallOfDuty4Path, UserMapsFolderName); }
+        }
+
+        public static string GetPathForUserMap(string map)
+        {
+            return Path.Combine(CallOfDuty4UserMapsPath, map);
         }
 
         /// <summary>

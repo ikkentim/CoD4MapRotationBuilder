@@ -26,8 +26,8 @@ namespace Cod4MapRotationBuilder.Collections
     /// </summary>
     public class MapCollection : IEnumerable<Map>
     {
-        private readonly List<Map> _maps = new List<Map>();
-        private readonly List<Map> _stocks = new List<Map>();
+        private List<Map> _maps = new List<Map>();
+        private List<Map> _stocks = new List<Map>();
         private readonly List<Map> _unknown = new List<Map>();
 
         /// <summary>
@@ -39,11 +39,12 @@ namespace Cod4MapRotationBuilder.Collections
             {
                 Map map = this.FirstOrDefault(m => m.Name == name);
 
-                if (map == null)
-                {
-                    map = new Map(name, null);
-                    _unknown.Add(map);
-                }
+                if (map != null) return map;
+                map = _unknown.FirstOrDefault(m => m.Name == name);
+
+                if (map != null) return map;
+                map = new Map(name, null);
+                _unknown.Add(map);
 
                 return map;
             }
@@ -91,9 +92,11 @@ namespace Cod4MapRotationBuilder.Collections
             {
                 case MapType.UserMap:
                     _maps.Add(map);
+                    _maps = _maps.OrderBy(m => m.Name).ToList();
                     break;
                 case MapType.Stock:
                     _stocks.Add(map);
+                    _stocks = _stocks.OrderBy(m => m.Name).ToList();
                     break;
                 default:
                     throw new ArgumentException("Invalid type");

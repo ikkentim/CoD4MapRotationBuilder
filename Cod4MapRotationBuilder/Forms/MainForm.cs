@@ -120,8 +120,14 @@ namespace Cod4MapRotationBuilder.Forms
             _gameModesProvider.Refresh();
             _mapsProvider.Refresh();
 
+            // Reload data set
+            rotationElementEditor.GameModesProvider = _gameModesProvider;
+            rotationElementEditor.MapsProvider = _mapsProvider;
+
             mapRotationEditor.NextGameMode = _gameModesProvider.Collection.FirstOrDefault();
             mapRotationEditor.NextMap = _mapsProvider.Collection.FirstOrDefault();
+
+            IsFileModified = false;
         }
 
         #endregion
@@ -287,6 +293,11 @@ namespace Cod4MapRotationBuilder.Forms
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (IsFileModified &&
+                MessageBox.Show(
+                    "Editing your settings will result in losing your changes. Are you sure you wish to continue?",
+                    "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning) != DialogResult.OK) return;
+
             new SettingsForm().ShowDialog(this);
             ReloadData();
         }
@@ -311,6 +322,11 @@ namespace Cod4MapRotationBuilder.Forms
             SaveAs();
         }
 
+        
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         #endregion
 
         #region RotationElement events
@@ -341,5 +357,22 @@ namespace Cod4MapRotationBuilder.Forms
         }
 
         #endregion
+
+        private void importMapsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var form = new MapImportForm();
+            if (form.ShowDialog(this) != DialogResult.OK) return;
+
+            var maps = form.Maps;
+            var url = form.MapDownloadURL;
+
+            var form2 = new MapImportSelectionForm(maps, url, _mapsProvider);
+            var r = form2.ShowDialog(this);
+
+            if (r != DialogResult.OK) return;
+
+
+            ReloadData();
+        }
     }
 }

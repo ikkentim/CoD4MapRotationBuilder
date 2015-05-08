@@ -62,7 +62,6 @@ namespace Cod4MapRotationBuilder.UI
             get { return _mapProvider; }
             set
             {
-                if (_mapProvider == value) return;
                 if (_mapProvider != null)
                 {
                     _mapProvider.Collection.MapAdded -= Collection_MapAdded;
@@ -96,7 +95,6 @@ namespace Cod4MapRotationBuilder.UI
             get { return _gameModesProvider; }
             set
             {
-                if (_gameModesProvider == value) return;
                 if (_gameModesProvider != null)
                 {
                     _gameModesProvider.Collection.GameModeAdded -= Collection_GameModeAdded;
@@ -173,7 +171,8 @@ namespace Cod4MapRotationBuilder.UI
         private void FillGameModes()
         {
             gameModesComboBox.Items.Clear();
-            gameModesComboBox.Items.AddRange(GameModesProvider.Collection.ToArray());
+            if (GameModesProvider != null)
+                gameModesComboBox.Items.AddRange(GameModesProvider.Collection.ToArray());
         }
 
         /// <summary>
@@ -187,12 +186,13 @@ namespace Cod4MapRotationBuilder.UI
             }
             mapsListView.Items.Clear();
 
-            foreach (ListViewItem item in MapsProvider.Collection.Select(m =>
-                new ListViewItem(m.Name) {Tag = m}).ToArray())
-            {
-                LoadThumbnailForMap(item.Tag as Map, item);
-                mapsListView.Items.Add(item);
-            }
+            if (MapsProvider != null)
+                foreach (ListViewItem item in MapsProvider.Collection.Select(m =>
+                    new ListViewItem(m.Name) {Tag = m}).ToArray())
+                {
+                    LoadThumbnailForMap(item.Tag as Map, item);
+                    mapsListView.Items.Add(item);
+                }
         }
 
         /// <summary>

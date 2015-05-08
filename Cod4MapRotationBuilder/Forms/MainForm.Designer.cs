@@ -50,6 +50,7 @@
             this.rotationElementEditor = new Cod4MapRotationBuilder.UI.RotationElementEditor();
             this.mapRotationEditor = new Cod4MapRotationBuilder.UI.MapRotationEditor();
             this.rotationElementPreview = new Cod4MapRotationBuilder.UI.RotationElementPreview();
+            this.importMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -103,6 +104,7 @@
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
             this.saveAsToolStripMenuItem,
+            this.importMapsToolStripMenuItem,
             this.exportAsPlainTextToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -155,6 +157,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -251,6 +254,13 @@
             this.rotationElementPreview.Size = new System.Drawing.Size(479, 580);
             this.rotationElementPreview.TabIndex = 0;
             // 
+            // importMapsToolStripMenuItem
+            // 
+            this.importMapsToolStripMenuItem.Name = "importMapsToolStripMenuItem";
+            this.importMapsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.importMapsToolStripMenuItem.Text = "Import maps...";
+            this.importMapsToolStripMenuItem.Click += new System.EventHandler(this.importMapsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +314,7 @@
         private UI.RotationElementPreview rotationElementPreview;
         private UI.MapRotationEditor mapRotationEditor;
         private UI.RotationElementEditor rotationElementEditor;
+        private System.Windows.Forms.ToolStripMenuItem importMapsToolStripMenuItem;
     }
 }
 
