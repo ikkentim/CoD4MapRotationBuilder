@@ -92,6 +92,12 @@
     <Compile Include="Collections\MapType.cs" />
     <Compile Include="Collections\RotationElementEventArgs.cs" />
     <Compile Include="Collections\RotationElementsSwappedEventArgs.cs" />
+    <Compile Include="Forms\ExportLoadscreenImagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExportLoadscreenImagesForm.Designer.cs">
+      <DependentUpon>ExportLoadscreenImagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MapImportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <Compile Include="UI\RotationElementPreview.Designer.cs">
       <DependentUpon>RotationElementPreview.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ExportLoadscreenImagesForm.resx">
+      <DependentUpon>ExportLoadscreenImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

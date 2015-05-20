@@ -38,6 +38,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportAsPlainTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,8 @@
             this.rotationElementEditor = new Cod4MapRotationBuilder.UI.RotationElementEditor();
             this.mapRotationEditor = new Cod4MapRotationBuilder.UI.MapRotationEditor();
             this.rotationElementPreview = new Cod4MapRotationBuilder.UI.RotationElementPreview();
-            this.importMapsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportLoadscreenImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -90,6 +92,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
+            this.advancedToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -139,6 +142,13 @@
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // importMapsToolStripMenuItem
+            // 
+            this.importMapsToolStripMenuItem.Name = "importMapsToolStripMenuItem";
+            this.importMapsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.importMapsToolStripMenuItem.Text = "Import maps...";
+            this.importMapsToolStripMenuItem.Click += new System.EventHandler(this.importMapsToolStripMenuItem_Click);
             // 
             // exportAsPlainTextToolStripMenuItem
             // 
@@ -254,12 +264,20 @@
             this.rotationElementPreview.Size = new System.Drawing.Size(479, 580);
             this.rotationElementPreview.TabIndex = 0;
             // 
-            // importMapsToolStripMenuItem
+            // advancedToolStripMenuItem
             // 
-            this.importMapsToolStripMenuItem.Name = "importMapsToolStripMenuItem";
-            this.importMapsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.importMapsToolStripMenuItem.Text = "Import maps...";
-            this.importMapsToolStripMenuItem.Click += new System.EventHandler(this.importMapsToolStripMenuItem_Click);
+            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportLoadscreenImagesToolStripMenuItem});
+            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
+            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.advancedToolStripMenuItem.Text = "Advanced";
+            // 
+            // exportLoadscreenImagesToolStripMenuItem
+            // 
+            this.exportLoadscreenImagesToolStripMenuItem.Name = "exportLoadscreenImagesToolStripMenuItem";
+            this.exportLoadscreenImagesToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.exportLoadscreenImagesToolStripMenuItem.Text = "Export loadscreen images...";
+            this.exportLoadscreenImagesToolStripMenuItem.Click += new System.EventHandler(this.exportLoadscreenImagesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -315,6 +333,8 @@
         private UI.MapRotationEditor mapRotationEditor;
         private UI.RotationElementEditor rotationElementEditor;
         private System.Windows.Forms.ToolStripMenuItem importMapsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportLoadscreenImagesToolStripMenuItem;
     }
 }
 

@@ -138,7 +138,7 @@ namespace Cod4MapRotationBuilder.Providers
         {
             if (IsPathCoD4PathValid(CallOfDuty4Path)) return true;
 
-            var dialog = new FolderBrowserDialog();
+            var dialog = new FolderBrowserDialog {Description = "Select your Call of Duty 4: Modern Warfare folder:"};
             if (dialog.ShowDialog(owner) != DialogResult.OK) return false;
 
             CallOfDuty4Path = dialog.SelectedPath;

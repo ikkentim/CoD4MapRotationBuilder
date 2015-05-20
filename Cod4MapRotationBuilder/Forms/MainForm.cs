@@ -15,6 +15,7 @@
 
 using System;
 using System.ComponentModel;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -373,6 +374,23 @@ namespace Cod4MapRotationBuilder.Forms
 
 
             ReloadData();
+        }
+
+        private void exportLoadscreenImagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ddia = new FolderBrowserDialog
+            {
+                Description = "Select the folder to export the images to:",
+            };
+
+            if (!Directory.Exists(ddia.SelectedPath)) ;
+
+
+            if (ddia.ShowDialog(this) == DialogResult.OK)
+            {
+                var dialog = new ExportLoadscreenImagesForm(_mapsProvider, ddia.SelectedPath);
+                dialog.ShowDialog(this);
+            }
         }
     }
 }

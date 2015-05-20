@@ -27,17 +27,20 @@ namespace Cod4MapRotationBuilder
         [STAThread]
         private static void Main()
         {
+#if !DEBUG
             try
             {
-
+#endif
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
+#if !DEBUG
             }
             catch (Exception)
             {
                 
             }
+#endif
         }
     }
 }
